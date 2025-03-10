@@ -1,8 +1,6 @@
 # Project_Spring2025
 
-# Идея компании
-
-Bookfinder
+# Идея компании Bookfinder
 
 ## Состав группы
 
