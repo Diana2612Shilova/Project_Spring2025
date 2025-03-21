@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 import re
+import numpy as np
 from bs4 import BeautifulSoup
 response = requests.get('https://malt.ru/catalog/khmel/')
 soup = BeautifulSoup(response.text, 'html.parser')
@@ -23,9 +24,33 @@ for card in cards:
     data.append({
             "Название": title,
         'Кислотность': kislotnost,
-        'Цена за килограммkhm': price
+        'Цена за килограмм': price
         })
 
 df = pd.DataFrame(data)
-print(df)
+for i, row in enumerate(df['Кислотность']):
+    if '-' in row:
+        df.loc[i, 'Кислотность минимальная'] = row.split('-')[0]
+        df.loc[i,'Кислотность максимальная'] = row.split('-')[1]
+        df.loc[i, 'Кислотность минимальная'] = df.loc[i,'Кислотность минимальная'].replace('%', '')
+        df.loc[i, 'Кислотность максимальная'] = df.loc[i, 'Кислотность максимальная'].replace('%', '')
+        df.loc[i, 'Кислотность минимальная'] = df.loc[i, 'Кислотность минимальная'].replace(',', '.')
+        df.loc[i, 'Кислотность максимальная'] = df.loc[i, 'Кислотность максимальная'].replace(',', '.')
+        df.loc[i, 'Кислотность минимальная'] = pd.to_numeric(df.loc[i, 'Кислотность минимальная'])
+        df.loc[i, 'Кислотность максимальная'] = pd.to_numeric(df.loc[i, 'Кислотность максимальная'])
+        df.loc[i, 'Кислотность итоговая'] = df.loc[i, ['Кислотность минимальная', 'Кислотность максимальная']].mean()
+    else:
+        df.loc[i,'Кислотность минимальная'] = row
+        df.loc[i,'Кислотность максимальная'] = row
+        df.loc[i, 'Кислотность минимальная'] = df.loc[i, 'Кислотность минимальная'].replace('%', '')
+        df.loc[i, 'Кислотность максимальная'] = df.loc[i, 'Кислотность максимальная'].replace('%', '')
+        df.loc[i,'Кислотность итоговая'] = row.replace('%', '')
+        df.loc[i, 'Кислотность минимальная'] = df.loc[i, 'Кислотность минимальная'].replace(',', '.')
+        df.loc[i, 'Кислотность максимальная'] = df.loc[i, 'Кислотность максимальная'].replace(',', '.')
+        df.loc[i, 'Кислотность итоговая'] = df.loc[i, 'Кислотность итоговая'].replace(',', '.')
+        df.loc[i, 'Кислотность минимальная'] = pd.to_numeric(df.loc[i, 'Кислотность минимальная'])
+        df.loc[i, 'Кислотность максимальная'] = pd.to_numeric(df.loc[i, 'Кислотность максимальная'])
+        df.loc[i, 'Кислотность итоговая'] = pd.to_numeric(df.loc[i, 'Кислотность итоговая'])
+
+
 df.to_excel('khmel.xlsx')
