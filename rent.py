@@ -28,8 +28,18 @@ button = driver.find_element(By.XPATH, "//button[@data-marker='search-filters/su
 button.click()
 time.sleep(1)
 price_elements = driver.find_elements(By.XPATH, "//p[@data-marker='item-price']//strong/span")
+address_elements = driver.find_elements(By.XPATH, "//div[@class='geo-root-NrkbV']//span[1]")
+addresses = [address_element.text for address_element in address_elements]
+addresses1 = [item for item in addresses if item != '']
 prices = [element.text for element in price_elements]
 prices = [price.split('₽')[0] for price in prices]
 prices = [price.replace(' ', '') for price in prices]
-df = pd.DataFrame(prices)
-df.to_excel('rent.xlsx')
+df = pd.DataFrame()
+link_elements = driver.find_elements(By.CSS_SELECTOR, 'a[data-marker="item-title"]')
+titles = [element.get_attribute("title") for element in link_elements]
+hrefs = [element.get_attribute("href") for element in link_elements]
+df['Название'] = titles
+df['Ссылка'] = hrefs
+df['Адрес'] = addresses1
+df['Стоимость в месяц, руб.'] = prices
+df.to_csv('rent.csv', encoding='utf-8')
