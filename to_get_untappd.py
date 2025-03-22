@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import pickle
 import re
+import pandas as pd
 from bs4 import BeautifulSoup
 
 driver = webdriver.Chrome()
@@ -32,7 +33,6 @@ try:
 except:
     print('continue')
 time.sleep(5)
-driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 show_more_button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "a.button.yellow.more-list-items.track-click")))
 site = driver.page_source
 
@@ -43,14 +43,38 @@ buttor_link= driver.find_element(By.XPATH, link)
 buttor_link.click()
 time.sleep(5)
 soup = BeautifulSoup(site, 'html.parser')
-reviews = driver.find_elements(By.CLASS_NAME, 'item')
+it_ = 0
+threshold = 3
+
+reviews = driver.find_element(By.ID, 'main-stream').find_elements(By.CLASS_NAME, 'item')
+places_links = []
+print(len(reviews))
 for review in reviews:
-    link_to_place =review.find_element(By.CLASS_NAME, 'top').find_element(By.TAG_NAME, 'p').find_elements(By.TAG_NAME, 'a')[-1]
-    if '/v/' in link_to_place.get_attribute('href'):
-        link_to_place.click()
-        time.sleep(1)
-
-        driver.back()
-show_more_button.click()
-time.sleep(5)
-
+    checkin = review.find_element(By.CLASS_NAME, 'checkin')
+    top_ =checkin.find_element(By.CLASS_NAME, 'top')
+    print(top_)
+    p_ = top_.find_element(By.TAG_NAME, 'p')
+    a_ =p_.find_elements(By.TAG_NAME, 'a')[-1]
+    if '/v/' in a_.get_attribute('href'):
+        places_links.append(a_.get_attribute('href'))
+names, addresses, links, = [],[],[]
+number = 0
+for places_link in places_links:
+    driver.get(places_link)
+    pub_html = driver.page_source
+    pub_soup = BeautifulSoup(pub_html, 'html.parser')
+    names.append(pub_soup.find(class_='venue-name').find('h1').get_text(strip=True).split(' / ')[0].strip())
+    addresses.append(pub_soup.find(class_='desktop-meta').get_text(strip=True)[:-6].strip())
+    links.append(places_link)
+    number += 1
+    if number % 2 == 0:
+        df = pd.DataFrame({'name':names, 'address':addresses, 'link':links})
+        df.to_csv('pubs.csv')
+    driver.back()
+    time.sleep(2)
+while it_ <threshold:
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    show_more_button = wait.until(
+        EC.element_to_be_clickable((By.CSS_SELECTOR, "a.button.yellow.more-list-items.track-click")))
+    show_more_button.click()
+    it_+=1
