@@ -44,8 +44,13 @@ buttor_link.click()
 time.sleep(5)
 soup = BeautifulSoup(site, 'html.parser')
 it_ = 0
-threshold = 3
-
+threshold = 6
+while it_ <threshold:
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    show_more_button = wait.until(
+        EC.element_to_be_clickable((By.CSS_SELECTOR, "a.more_checkins.button.yellow.track-click.more_checkins_logged")))
+    show_more_button.click()
+    it_+=1
 reviews = driver.find_element(By.ID, 'main-stream').find_elements(By.CLASS_NAME, 'item')
 places_links = []
 print(len(reviews))
@@ -64,17 +69,13 @@ for places_link in places_links:
     pub_html = driver.page_source
     pub_soup = BeautifulSoup(pub_html, 'html.parser')
     names.append(pub_soup.find(class_='venue-name').find('h1').get_text(strip=True).split(' / ')[0].strip())
-    addresses.append(pub_soup.find(class_='desktop-meta').get_text(strip=True)[:-6].strip())
+    addresses.append(pub_soup.find(class_='desktop-meta').get_text(strip=True).split('(Map)')[0].strip())
     links.append(places_link)
     number += 1
     if number % 2 == 0:
         df = pd.DataFrame({'name':names, 'address':addresses, 'link':links})
+        df = df.drop_duplicates(subset=df.columns[0])
+        df = df[df['name'] != 'Untappd at Home']
         df.to_csv('pubs.csv')
     driver.back()
     time.sleep(2)
-while it_ <threshold:
-    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-    show_more_button = wait.until(
-        EC.element_to_be_clickable((By.CSS_SELECTOR, "a.button.yellow.more-list-items.track-click")))
-    show_more_button.click()
-    it_+=1

@@ -1,13 +1,53 @@
 ,name,address,link
 0,Привычки,"Shevchenko 65 Almaty, Алматы",https://untappd.com/v/privychki-privychki/11273893
 1,Share House,"3 строение 2 Oruzheynyy Pereulok Moskva, Москва",https://untappd.com/v/share-house/7728362
-2,UnderBeer craft beer & cider,"7 мкр 12 Актау, Мангышлак (Map)Incorrect Information?Lear",https://untappd.com/v/underbeer-craft-beer-cider/12510314
-3,Бирмаркет,"Ленина, 15 Реутов, Московская обл. (Map)Incorrect Information?Lear",https://untappd.com/v/birmarket/8288753
-4,RULE taproom,"19 Starovagankovskiy per., str. 7 Moscow, Москва (Map)+7 (985) 168",https://untappd.com/v/rule-taproom/3363317
-5,RULE taproom,"19 Starovagankovskiy per., str. 7 Moscow, Москва (Map)+7 (985) 168",https://untappd.com/v/rule-taproom/3363317
-6,Untappd at Home,Four,https://untappd.com/v/at-home/9917985
-7,RULE taproom,"19 Starovagankovskiy per., str. 7 Moscow, Москва (Map)+7 (985) 168",https://untappd.com/v/rule-taproom/3363317
-8,Top Hop,"бул. Энтузиастов, 18  Набережные Челны, Татарстан (Map)Incorrect Information?Lear",https://untappd.com/v/top-hop/5805974
-9,Untappd at Home,Four,https://untappd.com/v/at-home/9917985
-10,Untappd at Home,Four,https://untappd.com/v/at-home/9917985
-11,Top Hop,"бул. Энтузиастов, 18  Набережные Челны, Татарстан (Map)Incorrect Information?Lear",https://untappd.com/v/top-hop/5805974
+2,UnderBeer craft beer & cider,"7 мкр 12 Актау, Мангышлак",https://untappd.com/v/underbeer-craft-beer-cider/12510314
+3,Бирмаркет,"Ленина, 15 Реутов, Московская обл.",https://untappd.com/v/birmarket/8288753
+4,RULE taproom,"19 Starovagankovskiy per., str. 7 Moscow, Москва",https://untappd.com/v/rule-taproom/3363317
+8,Top Hop,"бул. Энтузиастов, 18  Набережные Челны, Татарстан",https://untappd.com/v/top-hop/5805974
+12,Сосна и липа,"Мясницкая ул., 24/7, стр. 3 Москва, Москва",https://untappd.com/v/sosna-i-lipa/9214569
+13,Vertigo Bar & Bottleshop,"Teryan Street 65 Yerevan, Yerevan",https://untappd.com/v/vertigo-bar-and-bottleshop/11856429
+14,Mission • Ethical Space,"Спартаковская ул., 3, стр. 3 Москва, Москва",https://untappd.com/v/mission-ethical-space/9527507
+17,Самая длинная скамейка,Россия,https://untappd.com/v/samaya-dlinnaya-skameyka/11466727
+18,Storebeer,"Большой Сампсониевский пр-т, д.45 Санкт-Петербург, Санкт-Петербург",https://untappd.com/v/storebeer/10328528
+19,Bad.Bro.Bar,"ул. Грузинский Вал, 28 Москва, Москва",https://untappd.com/v/bad-bro-bar/3871059
+20,Мотыга Йети,"Ольховская ул., д.14, стр.2 Москва, Москва",https://untappd.com/v/motyga-yeti/11327077
+23,Dogma Bottle Shop,"Большой Спасоглинищевский пер., 9/1, стр. 10 Москва, Москва",https://untappd.com/v/dogma-bottle-shop/4606005
+25,Культурная рюмочная,"Газон 5/2 Великий Новгород, Новгородская обл.",https://untappd.com/v/kulturnaya-ryumochnaya/10638722
+27,Пивной Погреб,"Курортный бульвар 9А Кисловодск, Ставропольский край",https://untappd.com/v/pivnoy-pogreb/11259304
+28,Пора по Пиву CRAFT BEER SHOP,"Сурганова, 36 Мінск, Беларусь",https://untappd.com/v/pora-po-pivu-craft-beer-shop/10954326
+30,Lost Boy Bar,"Амурская ул., 1А, корп. 3 Москва, Москва",https://untappd.com/v/lost-boy-bar/12910881
+31,Beer Harbor,"ул. Покровка, 21-23/25, стр. 1 Москва, Москва",https://untappd.com/v/beer-harbor/7026172
+32,Оптимист,"Арбатский пер., 2/6 Москва, Москва",https://untappd.com/v/optimist/7976443
+34,Craft Republic,"Малый Гнездниковский Moskva, Москва",https://untappd.com/v/craft-republic/2180553
+40,Forshtadt Brewery,"Социалистический 116 Барнаул, Алтайский край",https://untappd.com/v/forshtadt-brewery/11200265
+43,Самоцвет,"ул. Малышева, 29а Екатеринбург, Свердловская обл.",https://untappd.com/v/samocvet/10206381
+44,Craft House,"ул. Энгельса, 75 Челябинск, Челябинская обл.",https://untappd.com/v/craft-house/3681781
+46,Смена • Foodcourt,"Товарищеский пер., д. 4, стр. 5 Москва, Москва",https://untappd.com/v/smena-foodcourt/8742873
+47,Папаска,"Пожарный п-к, д.1 Ногинск, Московская обл.",https://untappd.com/v/papaska/10777579
+50,На Троих,"Арбатский Переулок 6/2 Москва, Москва",https://untappd.com/v/na-troih/10797470
+51,Method • Beer & Munchies,"Tovarischeskiy per. 4, str. 5 Moscow, Москва",https://untappd.com/v/method-beer-and-munchies/8219233
+52,Underdog,"ул. Маросейка, 6-8, стр. 1 Москва, Москва",https://untappd.com/v/underdog/10019320
+56,Spin Bar,"vulica Kaĺvaryjskaja 21 Minsk, Мінск",https://untappd.com/v/spin-bar-by-carousel/10452325
+57,Dolphinwolf,"Боровая ул., 21 Санкт-Петербург, Санкт-Петербург",https://untappd.com/v/dolphinwolf/10428442
+58,Burger Heroes,"ул. Большая Ордынка, 19, стр. 1 Москва, Москва",https://untappd.com/v/burger-heroes/3532663
+62,Харчевня «у дяди Игоря»,"улица Бориса Пастернака, 12 Москва, Москва",https://untappd.com/v/harchevnya-u-dyadi-igorya/12825815
+63,HopsBrew Spot,"Уссурийский бульвар 6 Хабаровск, Хабаровский край",https://untappd.com/v/hopsbrew-spot/10513793
+64,ГлавПивМаг,"ул. Макаренко, 2/21 Москва, Москва",https://untappd.com/v/glavpivmag/3115404
+65,Кружка,"Ул. Жолио-Кюри, д.17 Дубна, Московская обл.",https://untappd.com/v/kruzhka/7148656
+67,Bootleggers Pub,"Советская, 23 Новосибирск, Новосибирская обл.",https://untappd.com/v/bootleggers-pub/6316066
+68,Бар Куйбышев,"Брянск ул Куйбышева 18 Брянск, Брянская обл.",https://untappd.com/v/bar-kuybyshev/7673345
+70,Rocket City Taproom,"Подмосковная 7 Королёв, Московская обл.",https://untappd.com/v/rocket-city-taproom/10490781
+72,Культура Пивная,"Улица Суханова, 6 Владивосток, Приморский край",https://untappd.com/v/kultura-pivnaya/10585611
+74,Декабрист,"Чернышевского 52а Саратов, Саратовская обл.",https://untappd.com/v/dekabrist/11393627
+77,"Oh, My Beer!","Артековская д.1 Москва, Москва",https://untappd.com/v/oh-my-beer/8667364
+78,Kiks 2.0,"Марата 56-58/29Б Санкт-Петербург, Санкт-Петербург",https://untappd.com/v/kiks-2-0/11717964
+82,Колючка,"Суворова 21 Ростов-на-Дону, Ростовская обл.",https://untappd.com/v/kolyuchka/6622747
+83,Памятник «Лиаз»,"Ликино-Дулёво, Московская обл.",https://untappd.com/v/pamyatnik-liaz/12802290
+84,Golodranets (Голодранец),"ул. Шаумяна, 67 Ростов-на-Дону, Ростовская обл.",https://untappd.com/v/golodranets-golodranec/2074310
+88,Малый Зал Государственного Кремлёвского Дворца,"Москва, Москва",https://untappd.com/v/malyy-zal-gosudarstvennogo-kremlevskogo-dvorca/8993058
+89,Братья Крафт/Craft Brothers,"Lomonosovskiy prospekt 25, Building 5 Moskva, Москва",https://untappd.com/v/bratya-kraftcraft-brothers/3943033
+93,Top Hops,"наб. реки Фонтанки, 55 Санкт-Петербург, Санкт-Петербург",https://untappd.com/v/top-hops/5660364
+95,HOLY HOP,"Океанский проспект, 9 Владивосток, Приморский край",https://untappd.com/v/holy-hop/6044732
+96,Spontan,"25 Baskov Pereulok СПБ, Санкт-Петербург",https://untappd.com/v/spontan/8737189
+100,TOP CRAFT,"ул. Петра Комарова 7 Хабаровск, Хабаровский край",https://untappd.com/v/top-craft/12613048
